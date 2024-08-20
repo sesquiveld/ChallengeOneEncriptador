@@ -1,3 +1,4 @@
+/*Areas de texto del programa*/
 const textArea = document.querySelector(".text-area");
 const mensaje = document.querySelector(".mensaje");
 
@@ -6,7 +7,7 @@ const mensaje = document.querySelector(".mensaje");
     y llamar a la funcion para encriptar el texto */
 
 function botonEncriptar(){
-    const caracter = /^[a-z\s]+$/;
+    const caracter = /^[a-zñ\s]+$/;
 
     if (caracter.test(textArea.value)) {
         const textEncriptado = encriptar(textArea.value);
@@ -56,7 +57,7 @@ function encriptar(stringEncriptado){
     y llamar a la funcion para desencriptar el texto */
 
 function botonDesencriptar(){
-    const caracter = /^[a-z\s]+$/;
+    const caracter = /^[a-zñ\s]+$/;
     
     if (caracter.test(textArea.value)) {
         const textEncriptado = desEncriptar(textArea.value);
@@ -110,7 +111,7 @@ function desEncriptar(stringDesencriptado){
 
 function copiar(){
     const textDesencriptado = mensaje.value;
-    const boton = Document.getElementsByClassName("copiar");
+    const boton = document.getElementsByClassName(copiar); 
 
     if (textDesencriptado == "") {
         alert("No hay texto para copiar.");

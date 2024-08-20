@@ -1,4 +1,5 @@
 
+/* Descripcion general del area de trabajo*/
 *{
     background: #d7d9e0;
     font-family: 'Inter';
@@ -8,67 +9,60 @@
     overflow-y: hidden;
 }
 
+/*  Logo alura*/
 .logo-alura{
     padding-top: 10px;
     margin-left: 10px;
     width: 3%;
 }
-/*main{
-    position: absolute;
-    width: 100%;
-    height: 90%;
-    display:flex;
-    justify-content: space-between;
-}*/
 
+/* Principal*/
 main{
     display: flex;
+    flex-wrap: wrap ;
     margin-bottom: 7px;
-    margin-left: 180px;
+    margin-left: 280px;/*180px;*/
+    justify-content: space-between;
 
 }
 
-.titulo-textarea{
-    margin-top: 1px;
-    margin-left: 150px;
-    font-family: 'Monserrat';
+/* Titulos */
+
+.titulo-textarea,
+.titulo-mensaje{
+    font-family: 'Monserrat', sans-serif;
     font-size: medium;
-    font-display: flex;
     color: #0A3871;
-     
-}
+    margin-top: 1px;
+    flex-basis: 100%;
+    display: flex;
+    justify-content: center;
+   }
+
+
+/* Area de textos*/
 
 .text-area{
     border: none;
     color: #0A3871;
-    margin-top: 5px;
-    margin-left: 150px;
+    margin-left: 10%; 
     text-transform: lowercase;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); 
-    padding: 10px; 
+    padding: 2.5%;  
     border: 1px solid #ccc; 
     border-radius: 5px; 
     outline: none; 
     overflow-y: auto;
     scrollbar-color: #0A3871 ;
     resize: none;
+    flex: 1;
+    margin: 20px;   
 }
-
 
 ::placeholder{ color: #0A3871}
     .text-area:focus {
         outline: none;
     }
-
-.titulo-mensaje{
-    margin-top: 1px;
-    margin-left: 215px;
-    font-family: 'Monserrat';
-    font-size: medium;
-    font-display: flex;
-    color: #0A3871;
-}
-    
 
 .mensaje{
     background: white;
@@ -78,11 +72,6 @@ main{
     border:none;
     border-radius: 24px;
     color: #0A3871;
-    margin-left: 100px;
-    margin-top: 5px;
-    padding-left: 30px;
-    position: fixed;
-   /* pointer-events: none;*/ 
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); 
     padding: 10px; 
     border: 1px solid #ccc; 
@@ -90,17 +79,22 @@ main{
     outline: none; 
     overflow-y: auto;
     resize: none;
-    /*field-sizing: content;*/
-
+    flex: 1;
+    margin: 10px;
 }
 .mensaje:focus{
     outline: none;
 }
 
+/* Botones de la interfaz*/
+
 .botones{
     display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
     margin-top: 12px;
     gap: 15px;
+   
 }
 
 
@@ -111,7 +105,10 @@ main{
     color: white;
     cursor: pointer;
     height: 57px;
-    width: 300px;
+    width: 250px;   
+    flex: 1;
+    margin: 5px;
+    transition: background-color0.3s ease;
 }
 
 .boton-encriptar:hover{
@@ -125,7 +122,9 @@ main{
     color: #0A3871;
     cursor: pointer;
     height: 57px;
-    width: 300px;
+    width: 250px; 
+    flex: 1;
+    margin: 5px;
 }
 
 .boton-desencriptar:hover{
@@ -138,13 +137,11 @@ main{
     color: #0A3871;
     cursor: pointer;
     height: 57px;
-    width: 300px;
-    margin-left: 180px;
-    margin-top:340px;
-    position: absolute;
-    width: 200px;
-/*    display: none;
-*/}
+    width: 200px; 
+    position: relative;
+    margin-left: 0; 
+    margin-top:0; 
+}
 
 
 .copiar:before{
@@ -180,3 +177,53 @@ main{
   .footer span {
     color: #e74c3c;
   }
+
+  @media(max-width:768px) {
+
+    main {
+        margin-left: 10px; 
+        margin-right: 10px; 
+    }
+    
+    .titulo-textarea, 
+    .titulo-mensaje {
+        margin-left: 0; 
+    }
+
+    .text-area, 
+    .mensaje {
+        flex-basis: 100%; 
+        margin-left: 0; 
+    }
+
+    .botones {
+        flex-direction: column; 
+    }
+
+    .boton-encriptar, 
+    .boton-desencriptar, 
+    .copiar {
+        width: 100%; 
+    }
+
+    .copiar {
+        position: relative; 
+        margin: 0;
+    }
+
+    .informacion {
+        margin-left: 10px; 
+    }
+}
+
+@media (max-width: 480px) {
+    .titulo-textarea, .titulo-mensaje {
+        font-size: small; 
+    }
+
+    .text-area, .mensaje {
+        padding: 5px; 
+    }
+}
+    
+    
